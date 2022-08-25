@@ -1,6 +1,7 @@
 # data dirs
 data/
 outfile.txt
+*.db
 
 # visual studio code files
 .vscode/
