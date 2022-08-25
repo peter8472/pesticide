@@ -35,13 +35,17 @@ if __name__ == "__main__":
                 url = regsearch + outname
                 print(url)
                 if os.path.exists(outname):
-                    print("{} exists".format(outname)
+                    print("{} exists".format(outname))
                     continue
                 else:
-                    req= urllib.request.Request(url)
-                    req.o
-                    outfile = open(outname,'w')
+                    # req= urllib.request.Request(url)
+                    # req.o
+                    response =  urllib.request.urlopen(url)
+                    answer = response.read()
+                    logger.addrow(url, answer)
 
-                    outfile.write("smple text")
+                    outfile = open(outname,'wb')
+
+                    outfile.write(answer)
                     outfile.close()
 
